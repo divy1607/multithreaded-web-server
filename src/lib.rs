@@ -19,7 +19,6 @@ impl ThreadPool {
         let receiver = Arc::new(Mutex::new(receiver));
 
         for id in 0..size {
-            // workers.push(Worker::new(id, Arc::clone(&receiver)));
             workers.push(Worker::new(id, Arc::clone(&receiver)));
         }
         ThreadPool { workers, sender }
